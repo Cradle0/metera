@@ -5,7 +5,7 @@
 
 <audio id="meteraaudio">
   <source id="a" src="" type="audio/mpeg">
-  Your browser does not support the audio element.
+  metera
 </audio>
 
 
@@ -16,9 +16,8 @@
 
 
 <script>
-var myMeteraAudio = new Array();
-       myMeteraAudio[0] = "http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage1.mp3";
-       myMeteraAudio[1] = "http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage2.mp3";
+var lazy = "https://gbf.wiki/images/7/7b/3040012000_v_115.mp3,https://gbf.wiki/images/7/7d/3040012000_win1.mp3,https://gbf.wiki/images/5/55/3040012000_03_evolution01.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage3.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage2.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage3.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage2a.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage1.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage1.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage4.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage3.mp3";
+var myMeteraAudio = lazy.split(',');
 function getRandom(min, max) {
   		min = Math.ceil(min);
   		max = Math.floor(max);
@@ -26,14 +25,10 @@ function getRandom(min, max) {
 }
 function playMetera() { 
   var i = getRandom(0, myMeteraAudio.length)
+  document.getElementById("demo").innerHTML = i;
   var a = document.getElementById('meteraaudio');
   a.src = myMeteraAudio[i];
   a.load();
   a.play(); 
 } 
 </script>
-
-
-
-</body>
-</html>
