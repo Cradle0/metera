@@ -3,17 +3,33 @@
 <body>
 
 
-<audio id="myMeteraAudio">
-  <source src="http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage1.mp3" type="audio/mpeg">
+<audio id="meteraaudio">
+  <source id="a" src="" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<img id="metera" src="https://my.mixtape.moe/krloye.jpg" onclick="playMeteraAudio()" />
+
+<input type= "image" id="metera" src="https://my.mixtape.moe/krloye.jpg" onclick="playMetera()" />
+
+
+<p id="demo"></p>
+
 
 <script>
-var metera = document.getElementById("myMeteraAudio"); 
-function playMeteraAudio() { 
-  metera.play(); 
+var myMeteraAudio = new Array();
+       myMeteraAudio[0] = "http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage1.mp3";
+       myMeteraAudio[1] = "http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage2.mp3";
+function getRandom(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+function playMetera() { 
+  var i = getRandom(0, myMeteraAudio.length)
+  var a = document.getElementById('meteraaudio');
+  a.src = myMeteraAudio[i];
+  a.load();
+  a.play(); 
 } 
 </script>
 
