@@ -5,7 +5,7 @@
 
 <audio id="meteraaudio">
   <source id="a" src="" type="audio/mpeg">
-  metera
+  Your browser does not support the audio element.
 </audio>
 
 
@@ -25,10 +25,14 @@ function getRandom(min, max) {
 }
 function playMetera() { 
   var i = getRandom(0, myMeteraAudio.length)
-  document.getElementById("demo").innerHTML = i;
   var a = document.getElementById('meteraaudio');
   a.src = myMeteraAudio[i];
   a.load();
   a.play(); 
 } 
 </script>
+
+
+
+</body>
+</html>
