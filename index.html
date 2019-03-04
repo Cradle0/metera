@@ -9,27 +9,38 @@
 </audio>
 
 
-<input type= "image" id="metera" src="https://my.mixtape.moe/krloye.jpg" onclick="playMetera()" />
+<input type= "image" id= 'metera' src="https://my.mixtape.moe/krloye.jpg"  onclick="playMetera();" />
 
 
 <p id="demo"></p>
 
 
 <script>
-var lazy = "https://gbf.wiki/images/7/7b/3040012000_v_115.mp3,https://gbf.wiki/images/7/7d/3040012000_win1.mp3,https://gbf.wiki/images/5/55/3040012000_03_evolution01.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage3.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage2.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage3.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage2a.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage1.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage1.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage4.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage3.mp3";
-var myMeteraAudio = lazy.split(',');
+var lazyA = "https://gbf.wiki/images/7/7b/3040012000_v_115.mp3,https://gbf.wiki/images/7/7d/3040012000_win1.mp3,https://gbf.wiki/images/5/55/3040012000_03_evolution01.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage3.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_03_mypage2.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage3.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage2a.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040012000_mypage1.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage1.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage4.mp3,http://game-a5.granbluefantasy.jp/assets_en/sound/voice/3040072000_mypage3.mp3";
+
+var lazyI = "https://my.mixtape.moe/krloye.jpg, https://my.mixtape.moe/kaknwl.JPG, https://my.mixtape.moe/rnrgti.JPG";
+
+var myMeteraAudio = lazyA.split(',');
+var myMeteraPics = lazyI.split(',');
+
 function getRandom(min, max) {
   		min = Math.ceil(min);
   		max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
 function playMetera() { 
-  var i = getRandom(0, myMeteraAudio.length)
+  var i = getRandom(0, myMeteraAudio.length);
+  var j = getRandom(0, myMeteraPics.length);
   var a = document.getElementById('meteraaudio');
+  var img = document.getElementById('metera');
   a.src = myMeteraAudio[i];
+  img.src = myMeteraPics[j];
   a.load();
   a.play(); 
 } 
+
+
 </script>
 
 
